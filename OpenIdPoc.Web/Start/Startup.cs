@@ -2,11 +2,12 @@
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OpenIdConnect;
+using OpenIdPoc.Web.Start;
 using Owin;
 
-[assembly: OwinStartup("OwinConfig", typeof(OpenIdPoc.Web.Startup))]
+[assembly: OwinStartup("OwinConfig", typeof(Startup))]
 
-namespace OpenIdPoc.Web
+namespace OpenIdPoc.Web.Start
 {
     public class Startup
     {

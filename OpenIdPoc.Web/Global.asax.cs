@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using OpenIdPoc.Web.Start;
 
 namespace OpenIdPoc.Web
 {
@@ -9,10 +11,11 @@ namespace OpenIdPoc.Web
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             RegisterRoutes(RouteTable.Routes);
         }
 
-        private void RegisterRoutes(RouteCollection routes)
+        private static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
