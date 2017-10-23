@@ -6,6 +6,7 @@ using OpenIdPoc.Web.Models;
 
 namespace OpenIdPoc.Web.Controllers
 {
+    [Authorize]
     public class DictionaryController : ApiController
     {
         // GET /api/dictionary

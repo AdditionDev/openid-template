@@ -1,5 +1,7 @@
-﻿using Microsoft.Owin;
+﻿using System.IdentityModel.Tokens;
+using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.ActiveDirectory;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OpenIdConnect;
 using OpenIdPoc.Web.Start;
@@ -25,6 +27,17 @@ namespace OpenIdPoc.Web.Start
                     RedirectUri = "http://localhost:57515/"
                 }
             );
+
+            app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+                new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+                {
+                    Tenant = "addition.dk",
+                    TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidAudience = "https://addition.dk/3c28f7b3-8d16-4fcd-bd3f-cc9037ce11ea"
+                    },
+                    AuthenticationType = "OAuth2Bearer"
+                });
         }
     }
 }
