@@ -160,6 +160,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DictionaryItem.cs" />
+    <Compile Include="Models\DictionaryResponseModel.cs" />
+    <Compile Include="Models\TokenDictionaryController.cs" />
+    <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Start\Startup.cs" />
     <Compile Include="Start\WebApiConfig.cs" />

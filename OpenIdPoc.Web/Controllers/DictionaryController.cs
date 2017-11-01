@@ -9,6 +9,9 @@ namespace OpenIdPoc.Web.Controllers
     [Authorize]
     public class DictionaryController : ApiController
     {
+        // App key from ad portal : 7fdeedVwCL9KyGk2F2v3dVAY+QwyTI2akK6tBzcQ3R4=
+
+
         // GET /api/dictionary
         public HttpResponseMessage Get()
         {
@@ -25,7 +28,17 @@ namespace OpenIdPoc.Web.Controllers
                     Definition = "Cascading Style Sheet"
                 }
             };
-            return Request.CreateResponse(HttpStatusCode.OK, result);
+            
+            var model = new DictionaryResponseModel
+            {
+                DictionaryItems = result,
+                UserData = new UserData
+                {
+                    UserName = User.Identity.Name
+
+                }
+            };
+            return Request.CreateResponse(HttpStatusCode.OK, model);
         }
     }
 }
