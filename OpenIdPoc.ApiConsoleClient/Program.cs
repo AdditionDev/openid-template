@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -25,7 +20,7 @@ namespace OpenIdPoc.ApiConsoleClient
         private static readonly string Authority = $"{AadInstance}/{TenantName}";
 
         private const string ApiResourceId = "2cb886e3-0931-4fcf-a271-8ca0e52417a0";
-        private const string ApiBaseAddress = "http://localhost:57515/";
+        private const string ApiBaseAddress = "http://openidpoc.local/";
 
         private static HttpClient _httpClient = new HttpClient();
         private static AuthenticationContext _authContext = null;

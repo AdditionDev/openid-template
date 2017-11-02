@@ -24,7 +24,7 @@ namespace OpenIdPoc.Web.Start
                 {
                     ClientId = "2cb886e3-0931-4fcf-a271-8ca0e52417a0",
                     Authority = "https://login.windows.net/addition.dk",
-                    RedirectUri = "http://localhost:57515/"
+                    RedirectUri = "http://openidpoc.local/"
                 }
             );
 
@@ -34,7 +34,7 @@ namespace OpenIdPoc.Web.Start
                     Tenant = "addition.dk",
                     TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidAudience = "https://addition.dk/3c28f7b3-8d16-4fcd-bd3f-cc9037ce11ea"
+                        ValidAudience = "2cb886e3-0931-4fcf-a271-8ca0e52417a0"//"3c28f7b3-8d16-4fcd-bd3f-cc9037ce11ea"
                     },
                     AuthenticationType = "OAuth2Bearer"
                 });
